@@ -1,7 +1,8 @@
 package com.cloudacy.native_exif
 
-import androidx.exifinterface.media.ExifInterface
+import android.util.Log
 import androidx.annotation.NonNull
+import androidx.exifinterface.media.ExifInterface
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
@@ -56,6 +57,7 @@ class NativeExifPlugin: FlutterPlugin, MethodCallHandler {
   }
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
+    Log.d("huytq", "onMethodCall: ${call.method}")
     when (call.method) {
         "initPath" -> {
           val exif = ExifInterface(call.arguments as String)
@@ -143,8 +145,15 @@ class NativeExifPlugin: FlutterPlugin, MethodCallHandler {
 
           val attributeMap = HashMap<String, Any>()
 
-          for (tag in tags)
-            exif.getAttribute(tag)?.let { attributeMap[tag] = it }
+          for (tag in tags) {
+            Log.d("huytq", "getAttributes 1: $tag")
+
+            exif.getAttribute(tag)?.let {
+              Log.d("huytq", "getAttributes 2: $tag - $it")
+              attributeMap[tag] = it
+            }
+          }
+
 
           val latLong = exif.latLong
           if (latLong != null) {
@@ -158,6 +167,9 @@ class NativeExifPlugin: FlutterPlugin, MethodCallHandler {
           val id = call.argument<Int>("id")
           val tag = call.argument<String>("tag")
           val value = call.argument<String>("value")
+
+          Log.d("huytq", "setAttribute: $tag - $value")
+
 
           if (id == null || tag == null || value == null) {
             result.error("BAD_ARGUMENTS", "Bad arguments were given to this method.", null)

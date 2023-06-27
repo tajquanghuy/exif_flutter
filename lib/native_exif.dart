@@ -68,6 +68,9 @@ class Exif {
       throw StateError('Exif interface is already closed.');
     }
 
+    print("huytq Exif - writeAttribute: ${value}");
+
+
     await _channel.invokeMethod('setAttribute', {
       'id': _id,
       'tag': tag,
@@ -79,6 +82,8 @@ class Exif {
     if (active == false) {
       throw StateError('Exif interface is already closed.');
     }
+
+
 
     await _channel.invokeMethod('setAttributes', {
       'id': _id,

@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="576940b0-5372-443a-b0db-4b52e5c19b24" name="Changes" comment="- Add TAG_GPS_IMG_DIRECTION for determine the direction of the image when it was captured&#10;- Add TAG_GPS_H_POSITIONING_ERROR for detect horizontal positioning errors in meters.">
+    <list default="true" id="576940b0-5372-443a-b0db-4b52e5c19b24" name="Changes" comment="Add tags">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/com/cloudacy/native_exif/NativeExifPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/com/cloudacy/native_exif/NativeExifPlugin.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/native_exif.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/native_exif.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,6 +84,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="- Add TAG_GPS_IMG_DIRECTION for determine the direction of the image when it was captured&#10;- Add TAG_GPS_H_POSITIONING_ERROR for detect horizontal positioning errors in meters." />
-    <option name="LAST_COMMIT_MESSAGE" value="- Add TAG_GPS_IMG_DIRECTION for determine the direction of the image when it was captured&#10;- Add TAG_GPS_H_POSITIONING_ERROR for detect horizontal positioning errors in meters." />
+    <MESSAGE value="Add tags" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add tags" />
   </component>
 </project>
