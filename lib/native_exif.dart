@@ -25,6 +25,7 @@ class Exif {
 
   /// Parse the exif metadata from an image located at [path].
   static Future<Exif> fromPath(String path) async {
+    print("huytq Exif - fromPath: $path");
     final int id = await _channel.invokeMethod('initPath', path);
 
     return Exif(id);
