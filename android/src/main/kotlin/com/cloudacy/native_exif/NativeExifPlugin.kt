@@ -146,8 +146,6 @@ class NativeExifPlugin: FlutterPlugin, MethodCallHandler {
           val attributeMap = HashMap<String, Any>()
 
           for (tag in tags) {
-            Log.d("huytq", "getAttributes 1: $tag")
-
             exif.getAttribute(tag)?.let {
               Log.d("huytq", "getAttributes 2: $tag - $it")
               attributeMap[tag] = it
@@ -189,8 +187,12 @@ class NativeExifPlugin: FlutterPlugin, MethodCallHandler {
           result.success(null)
         }
         "setAttributes" -> {
+          Log.d("huytq", "Exif - setAttribute")
+
           val id = call.argument<Int>("id")
           val values = call.argument<Map<String, Any>>("values")
+
+          Log.d("huytq", "Exif - setAttribute: ${values}")
 
           if (id == null || values == null) {
             result.error("BAD_ARGUMENTS", "Bad arguments were given to this method.", null)
